@@ -1,0 +1,41 @@
+nav {
+    padding: 10px 0;
+    width: 100%;
+    top: calc(100vh - 170px);
+    z-index: 99;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    overflow-x: hidden;
+
+    .nav_item {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: relative;
+
+        &.active {
+            &::after {
+                opacity: 1;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid #b89963;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
+
+}
