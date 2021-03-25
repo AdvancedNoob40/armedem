@@ -6,6 +6,7 @@ import Home from "./pages/home/Home.js";
 import AboutUs from "./pages/about-us/AboutUs.js";
 import Projects from "./pages/projects/Projects.js";
 import Contact from "./pages/contact/Contact.js";
+import ProjectDetails from "./pages/project-details/ProjectDetails.js";
 
 const App = () => {
   return (
@@ -14,7 +15,12 @@ const App = () => {
         <Switch>
           <Route path="/iletisim" component={Contact} />
           <Route path="/hakkimizda" component={AboutUs} />
-          <Route path="/projelerimiz" component={Projects} />
+          <Route exact path="/projelerimiz" component={Projects} />
+          <Route
+            exact
+            path="/projelerimiz/armedem-apt"
+            component={ProjectDetails}
+          />
           <Route path="/" component={Home} />
         </Switch>
       </Router>

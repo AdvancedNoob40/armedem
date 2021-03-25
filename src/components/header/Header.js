@@ -1,24 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Style from "./header.module.scss";
 import $ from "jquery";
 
 const Header = ({ pushHeader }) => {
-  const headerSticky = () => {
-    var $navTop = $("#nav").scrollTop();
-    console.log($navTop);
-    /*  var nav = document.getElementById("nav");
-    var navOffsetTop = nav.offsetTop;
-    if (navOffsetTop < 0) {
-      nav.style.top = 0;
-    } else {
-      nav.style.top = "calc(100vh - 170px)";
-    } */
-  };
-
-  document.addEventListener("scroll", function (e) {
-    headerSticky();
-  });
+  const [isActive, setIsActive] = useState(false);
+  console.log(isActive);
 
   return (
     <Fragment>
@@ -29,9 +16,9 @@ const Header = ({ pushHeader }) => {
             <div className="logo-wrapper">
               <img src="/images/logo.png" alt="logo" />
             </div>
-            <div className="menu-wrapper d-flex align-items-center">
+            <div className="d-none menu-wrapper d-md-flex align-items-center">
               <NavLink
-                activeClassName="active"
+                activeClassName={Style.active}
                 className={Style.nav_item + " py-2 mx-4"}
                 to="/"
                 exact={true}
@@ -39,26 +26,88 @@ const Header = ({ pushHeader }) => {
                 ANASAYFA
               </NavLink>
               <NavLink
-                activeClassName="active"
+                activeClassName={Style.active}
                 className={Style.nav_item + " py-2 mx-4"}
                 to="/hakkimizda"
               >
                 HAKKIMIZDA
               </NavLink>
               <NavLink
-                activeClassName="active"
+                activeClassName={Style.active}
                 className={Style.nav_item + " py-2 mx-4"}
                 to="/projelerimiz"
               >
                 PROJELERİMİZ
               </NavLink>
               <NavLink
-                activeClassName="active"
+                activeClassName={Style.active}
                 className={Style.nav_item + " py-2 mx-4"}
                 to="/iletisim"
               >
                 İLETİŞİM
               </NavLink>
+            </div>
+            <div className={Style.mobileMenu + " d-block d-md-none"}>
+              <a
+                onClick={() => setIsActive(!isActive)}
+                className={Style.hamburgerIcon}
+                href="#"
+              >
+                <svg
+                  height="384pt"
+                  viewBox="0 -53 384 384"
+                  width="384pt"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="m368 154.667969h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+                  <path d="m368 32h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+                  <path d="m368 277.332031h-352c-8.832031 0-16-7.167969-16-16s7.167969-16 16-16h352c8.832031 0 16 7.167969 16 16s-7.167969 16-16 16zm0 0" />
+                </svg>
+              </a>
+              <div
+                className={`${Style.openable} ${isActive ? Style.active : ""}`}
+              >
+                <ul>
+                  <li>
+                    <NavLink
+                      activeClassName={Style.active}
+                      className={Style.nav_item + " py-2 mx-4"}
+                      to="/"
+                      exact={true}
+                    >
+                      ANASAYFA
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      activeClassName={Style.active}
+                      className={Style.nav_item + " py-2 mx-4"}
+                      to="/hakkimizda"
+                    >
+                      HAKKIMIZDA
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      activeClassName={Style.active}
+                      className={Style.nav_item + " py-2 mx-4"}
+                      to="/projelerimiz"
+                    >
+                      PROJELERİMİZ
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      activeClassName={Style.active}
+                      className={Style.nav_item + " py-2 mx-4"}
+                      to="/iletisim"
+                    >
+                      İLETİŞİM
+                    </NavLink>
+                  </li>
+                </ul>
+                <span onClick={() => setIsActive(!isActive)}>X</span>
+              </div>
             </div>
           </div>
         </div>

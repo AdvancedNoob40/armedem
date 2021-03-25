@@ -1,0 +1,53 @@
+.container {
+    padding-bottom: 60px;
+
+    .row {
+        margin-left: -45px;
+        margin-right: -45px;
+        padding: 20px;
+        padding-bottom: 40px;
+        box-shadow: inset 2000px 2000px 0 0 rgba(183, 183, 183, 0.06);
+
+        border-radius: 16px;
+        border: 1px solid rgba(205, 205, 205, 0.5);
+
+        .sectionTitle {
+            color: #fff;
+            font-size: 1.5rem;
+            padding-bottom: 18px;
+            margin-bottom: 0;
+
+
+        }
+
+        .DisGorsel {
+            .imgWrapper {
+                margin: 0 15px;
+                width: calc(33% - 16px);
+
+                @media screen and (max-widht:768px) {
+                    width: 100%;
+                }
+
+                img {
+                    border-radius: 16px;
+                }
+            }
+
+        }
+    }
+}
+
+
+.firstSection {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .kunye {
+        color: #fff;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.projectsWrapper {
+    padding: 15px;
+    border: 1px solid rgba(205, 205, 205, 0.5);
+    border-radius: 16px;
+    margin-bottom: 100px;
+    box-shadow: inset 2000px 2000px 0 0 rgba(183, 183, 183, 0.06);
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.projectCard {
+    img {
+        border-radius: 16px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: #f7f7f7;
+        font-size: 1.25rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #f7f7f7;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #f7f7f7;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+}

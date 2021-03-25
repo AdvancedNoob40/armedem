@@ -10,7 +10,7 @@ nav {
 
     .nav_item {
         text-decoration: none;
-        color: #fff;
+        color: #f7f7f7;
         font-size: 1.5rem;
         font-weight: bold;
         position: relative;
@@ -37,5 +37,61 @@ nav {
         }
     }
 
+    .mobileMenu {
+        padding-right: 40px;
+        padding-top: 40px;
+
+        .hamburgerIcon {
+
+            svg {
+                width: 40px;
+                height: 40px;
+                fill: #f7f7f7;
+            }
+        }
+
+        .openable {
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(34, 40, 49, 1);
+            transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateY(-100%);
+
+            &.active {
+                transform: translateY(0);
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100vh;
+
+                li {
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+
+                    a {
+                        padding-top: 8px !important;
+                        padding-bottom: 8px !important;
+                        display: table;
+                    }
+                }
+            }
+
+            span {
+                color: #f7f7f7;
+                position: absolute;
+                top: 40px;
+                right: 40px;
+                font-size: 40px;
+            }
+        }
+
+    }
 
 }
